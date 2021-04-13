@@ -21,12 +21,12 @@ Setup the client application:
 
 From the **Applications** page, choose **Add Application**. On the Create New Application page, select **Web**. Set the following values:
 - Name: API Gateway
-- Base URIs: http://localhost:8080/
-- Login redirect URIs: http://localhost:8080/login/oauth2/code/okta
-- Logout redirect URIs: http://localhost:8080
+- Base URIs: `http://localhost:8080/`
+- Login redirect URIs: `http://localhost:8080/login/oauth2/code/okta`
+- Logout redirect URIs: `http://localhost:8080`
 - Grant type allowed: Authorization Code, Refresh Token
 
-Copy the **ClientId** and **ClientSecret**. Copy the issuer, found under **API** > **Authorization Servers**.
+Copy the **ClientId** and **ClientSecret**. Copy the issuer, found under **Security** > **API** > **Authorization Servers**.
 
 ## Create the Cart Service Client Application in Okta
 
@@ -35,8 +35,7 @@ From the **Applications** page, choose **Add Application**. On the Create New Ap
 
 Copy the **ClientId** and **ClientSecret**.
 
-Create a custom scope to restrict what the `cart-service` accessToken can access. From the menu bar select **API** -> **Authorization Servers**. Edit the authorization server by clicking on the edit pencil, then click **Scopes** -> **Add Scope**. Fill out the name field with `pricing` and press Create.
-
+Create a custom scope to restrict what the `cart-service` accessToken can access. In the Okta Admin Console, go to **Security** > **API** > **Authorization Servers**. Edit the `default` authorization server by clicking on the edit pencil, then click **Scopes** > **Add Scope**. Fill out the name field with `pricing` and press **Create**.
 
 ## Run the applications with Maven
 
